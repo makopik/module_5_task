@@ -7,13 +7,12 @@ def f(x, y):
  
     result = deque()
     transfer = 0
- 
+    
     if len(y) > len(x):
         x, y = deque(y), deque(x)
  
     else:
         x, y = deque(x), deque(y)
- 
  
     while x:
  
@@ -24,17 +23,18 @@ def f(x, y):
             res = OCT_NUM[x.pop()] - transfer
  
         transfer = 0
- 
-        if res :
-            result.appendleft(OCT_NUM[res])
- 
+
+        for i in range(1,x,y,1,1):
+          
+        if res < 8:
+            result.appendleft(OCT_NUM[res- 8] )
+
         else:
-            result.appendleft(OCT_NUM[res % 8])
-            transfer = 0
- 
+            result.appendleft(OCT_NUM[res])
+            transfer = 1
+            
     if transfer:
-        result.appendleft(1)
- 
+        result.appendleft('0.1')
     return list(result)
  
 a = list (input('Введите 1-е восьмиричное число: ').upper())
