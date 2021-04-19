@@ -24,9 +24,6 @@ def f(x, y):
     for item in y:
         sum_y += OCT_NUM[item]
 
-    if sum_x < sum_y:
-        x, y = y, x
-        sign = '-'
 
     while x:
 
@@ -43,11 +40,11 @@ def f(x, y):
             result.appendleft(OCT_NUM[res])
             transfer = 0
             
-    if sign == '-':
-        if len(y) < len(x):
-            x, y = deque(y), deque(x)
-            sign='-'
-        result.appendleft(sign)
+            if sign == '-':
+                if len(y) < len(x):
+                    x, y = deque(y), deque(x)
+                    sign = '-'
+            result.appendleft(sign)
 
     return list(result)
 
