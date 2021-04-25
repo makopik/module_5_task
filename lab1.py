@@ -1,19 +1,22 @@
 from collections import deque
 
 
-def f(x, y, op = '+'):
+def f(x, y, ):
     OCT_NUM = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7,
                0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', }
 
     result = deque()
     transfer = 0
-    sign = '+-'
+    sign = ''
+
+
 
     if len(y) > len(x):
-        x, y = deque(y), deque(x)
+        x, y = deque(y), deque(x)   
+        sign = '-'
+    result.appendleft(sign)
 
-    else:
-        x, y = deque(x), deque(y)
+
 
     sum_x = 0
     sum_y = 0
@@ -39,12 +42,7 @@ def f(x, y, op = '+'):
         else:
             result.appendleft(OCT_NUM[res])
             transfer = 0
-            
-            if op == '-':
-                if y < x:
-                    x, y = y, x
-                    sign = '-'
-            result.appendleft(sign)
+
 
     return list(result)
 
