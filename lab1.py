@@ -9,14 +9,9 @@ def f(x, y, ):
     transfer = 0
     sign = ''
 
-
-
     if len(y) > len(x):
         x, y = deque(y), deque(x)   
-        sign = '-'
-    result.appendleft(sign)
-
-
+        sign='-'
 
     sum_x = 0
     sum_y = 0
@@ -45,7 +40,6 @@ def f(x, y, ):
 
 
     return list(result)
-
 
 a = list(input('Введите 1-е восьмиричное число: ').upper())
 b = list(input('Введите 2-е восьмиричное число: ').upper())
