@@ -38,6 +38,8 @@ def f(x, y, ):
             result.appendleft(OCT_NUM[res])
             transfer = 0
 
+    if sign == '-':
+        result.appendleft(sign)
 
     return list(result)
 
@@ -45,4 +47,4 @@ a = list(input('Введите 1-е восьмиричное число: ').uppe
 b = list(input('Введите 2-е восьмиричное число: ').upper())
 print(a, b)
 
-print(*a, '-', *b, '=', f(a, b))
+print(*a, '-', *b, '=', f(a.copy(), b.copy()))
